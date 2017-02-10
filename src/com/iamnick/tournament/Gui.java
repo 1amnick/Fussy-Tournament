@@ -8,6 +8,7 @@ import java.awt.GraphicsEnvironment;
 import java.io.File;
 import java.io.IOException;
 
+import javax.swing.BoxLayout;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -25,7 +26,8 @@ public class Gui {
 	JLabel vsSpace = new JLabel("  VS  ");
 	JLabel fighter2 = new JLabel("Mikto1000");
 	Font font = loadFont("direwolfexpand.ttf");
-	
+	JLabel rank1 = new JLabel("Bold Beta");
+	JLabel rank2 = new JLabel("Confused Puppy");
 
 
 	public Gui(){
@@ -34,17 +36,22 @@ public class Gui {
 		fighter1.setFont(font);
 		fighter2.setFont(font);
 		vsSpace.setFont(font);
+		rank1.setFont(font.deriveFont(16f));
+		rank2.setFont(font.deriveFont(16f));
 		
+		
+		panel.add(rank1);
 		panel.add(fighter1);
 		panel.add(vsSpace);
 		panel.add(fighter2);
 		panel.setAlignmentX(JComponent.CENTER_ALIGNMENT);
-		panel.setBackground(Color.RED);
+		frame.getContentPane().setBackground(Color.RED);
+		panel.add(rank2);
 		frame.add(panel);
-	//	frame.add(panel2); //make sure this bar shows under the time settings
-	//	frame.add(panel3);
-		frame.setLayout(new FlowLayout(FlowLayout.CENTER)); //i think this is magic
-		frame.setSize(400, 300); //random numbers go here
+//		frame.add(panel2);
+//		frame.add(panel3);
+		frame.setLayout(new FlowLayout()); //i think this is magic
+		frame.setSize(450, 300); //random numbers go here
 		frame.setVisible(true);
 
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
